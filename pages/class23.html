@@ -3,16 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>class-23</title>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     
 
+    <div class="container">
+        <h2 class="text-center">DOM - Document Object Model</h2>
+        <p id="text">Chnage the text using DOM</p>
+        <button class="btn btn-primary" id="change">Change</button>
+        <div class="gap"></div>
 
-    <script src="assets/js/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+        <h3>loop content 1</h3>
+        <h3>loop content 2</h3>
+        <h3>loop content 3</h3>
+        <h3>loop content 4</h3>
+
+
+        <div class="gap">
+            <div id="show" class="hide alert alert-primary" role="alert">
+                Please Enter a value
+            </div>
+            <input type="password" class="input">
+            <div class="showbtn btn btn-primary">Show</div>
+            <div class="submitbtn btn btn-info" type="submit">submit</div>
+            <p class="inputvalue"></p>
+        </div>
+
+
+    </div>
+    <script>
+
+        let dom = document.getElementById('text').innerHTML = "text changed using DOM"
+
+        let heading = document.getElementsByTagName("h3")
+        let arr = Array.from(heading)
+        console.log(arr)
+
+        // arr.map(item => (
+        //     console.log(item.innerHTML)
+        // ))
+
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i].innerHTML)
+            console.log(`${arr[i].innerHTML} + cit`) 
+        }
+
+
+        let input = document.querySelector(".input")
+        let showbtn = document.querySelector(".showbtn")
+        let show = document.getElementById("show")
+        let submitbtn = document.querySelector(".submitbtn")
+        let inputvalue = document.querySelector(".inputvalue")
+
+        showbtn.addEventListener("click", function(){
+           if(!input.value){
+                show.classList.remove("hide")
+                show.classList.add("show")
+           }else{
+                if(input.type == "password"){
+                    input.type = "text"
+                    showbtn.innerHTML = "Hide"
+                    show.classList.remove("show")
+                    show.classList.add("hide")
+                }else{
+                    input.type = "password"
+                    showbtn.innerHTML = "Show"
+                    show.classList.remove("show")
+                    show.classList.add("hide")
+                }
+           }
+        })
+
+        submitbtn.addEventListener("click", function(){
+            inputvalue.innerHTML = input.value
+
+        })
+        
+
+
+
+
+
+
+
+    </script>
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
 </body>
 </html>

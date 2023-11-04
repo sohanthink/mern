@@ -18,12 +18,15 @@
         <div class="form">
             <form action="">
                 <div class="input-item">
-                    <input type="text" placeholder="Enter Your Name">
-                    <p>Enter Name *</p>
+                    <input id="name" type="text" placeholder="Enter Your Name">
+                    <p class="name_err"></p>
                 </div>
                 <div class="input-item">
-                    <input type="text" placeholder="Enter Your Email">
-                    <p>Enter Email *</p>
+                    <input id="email" type="text" placeholder="Enter Your Email">
+                    <p class="email_err">Enter Email *</p>
+                </div>
+                <div class="input-item">
+                    <input id="submit" type="submit">
                 </div>
             </form>
         </div>
@@ -31,7 +34,23 @@
 
 
 
+    <script>
 
+        let name = document.querySelector("#name")
+        let submit = document.getElementById('submit')
+        let name_err = document.querySelector(".name_err")
+
+        submit.addEventListener("click",(e)=>{
+            e.preventDefault()
+            if(!name.value){
+                name_err.innerHTML = 'Enter Name *'
+            }else{
+                name_err.innerHTML = ''
+            }
+        })
+
+        
+    </script>
 
     <script src="../assets/js/jquery-1.12.4.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>

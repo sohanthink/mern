@@ -202,3 +202,24 @@ img {
 .hide {
     visibility: hidden;
 }
+
+/* ==================================
+======== class-24 css starts from here
+================================== */
+
+.form form {
+    width: 600px;
+    background: #bcf0ff;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+}
+
+form .input-item p {
+    padding-top: 10px;
+    color: red;
+}

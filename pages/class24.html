@@ -10,34 +10,59 @@
 </head>
 <body>
 
-    <div class="container">
-        <h2 class="text-center py-5 fw-bold">Validation With javascript</h2>
-    </div>
+    <div class="double">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="container">
+                    <h2 class="text-center py-5 fw-bold">Validation With javascript</h2>
+                    <div class="centered-div">
+                        <div class="form">
+                            <form action="">
+                                <div class="input-item">
+                                    <input id="name" type="text" placeholder="Enter Your Name">
+                                    <p class="name_err"></p>
+                                </div>
+                                <div class="input-item">
+                                    <input id="email" type="text" placeholder="Enter Your Email">
+                                    <p class="email_err"></p>
+                                </div>
+                                <div class="input-item pass_eye">
+                                    <input id="password" type="password" placeholder="Enter Your Password">
+                                    <i id="pass_eye" class="fa-solid fa-eye"></i>
+                                    <p class="pass_err"></p>
+                                </div>
+                                <div class="input-item">
+                                    <input id="con_pass" type="password" placeholder="Enter Your Confirm Password">
+                                    <p class="con_pass_err"></p>
+                                </div>
+                                <div class="input-item">
+                                    <input id="submit" type="submit">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <div class="container centered-div">
-        <div class="form">
-            <form action="">
-                <div class="input-item">
-                    <input id="name" type="text" placeholder="Enter Your Name">
-                    <p class="name_err"></p>
+            <div class="col-lg-6">
+                <div class="container">
+                    <h2 class="text-center py-5 fw-bold">Category Add</h2>
+                    <div class="form centered-div">
+                        <form action="">
+                            <div class="input-item">
+                                <input id="category_name" type="text" placeholder="Enter Categpry Name">
+                            </div>
+                            <div class="input-item mt-4">
+                                <input id="category_submit" type="submit">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="category_box centered-div mt-5">
+                        <ul>
+                        </ul>
+                    </div>
                 </div>
-                <div class="input-item">
-                    <input id="email" type="text" placeholder="Enter Your Email">
-                    <p class="email_err"></p>
-                </div>
-                <div class="input-item pass_eye">
-                    <input id="password" type="password" placeholder="Enter Your Password">
-                    <i id="pass_eye" class="fa-solid fa-eye"></i>
-                    <p class="pass_err"></p>
-                </div>
-                <div class="input-item">
-                    <input id="con_pass" type="password" placeholder="Enter Your Confirm Password">
-                    <p class="con_pass_err"></p>
-                </div>
-                <div class="input-item">
-                    <input id="submit" type="submit">
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 
@@ -104,6 +129,7 @@
 
         })
 
+        // eye button on off/password show and hide
         pass_eye.addEventListener("click",()=>{
             if(password.type === "password"){
                 password.type = "text"
@@ -111,6 +137,11 @@
                 password.type = "password"
             }
         })
+
+        // category add js starting from here================================
+        // ==================================================
+
+
 
         
 

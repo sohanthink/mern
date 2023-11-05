@@ -233,3 +233,9 @@ form .input-item i {
     top: 14px;
     right: 14px;
 }
+
+.category_box ul {
+    background: #4dffc4;
+    padding: 20px;
+    width: 600px;
+}

@@ -23,7 +23,7 @@
                 </div>
                 <div class="input-item">
                     <input id="email" type="text" placeholder="Enter Your Email">
-                    <p class="email_err">Enter Email *</p>
+                    <p class="email_err"></p>
                 </div>
                 <div class="input-item">
                     <input id="submit" type="submit">
@@ -38,7 +38,11 @@
 
         let name = document.querySelector("#name")
         let submit = document.getElementById('submit')
+        let email = document.getElementById('email')
         let name_err = document.querySelector(".name_err")
+        let email_err = document.querySelector(".email_err")
+        // regex for email validation
+        let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
         submit.addEventListener("click",(e)=>{
             e.preventDefault()
@@ -46,6 +50,16 @@
                 name_err.innerHTML = 'Enter Name *'
             }else{
                 name_err.innerHTML = ''
+            }
+
+            if(!email.value){
+                email_err.innerHTML = 'Enter Your Email *'
+            }else{
+                if(email.value.match(mailformat)){
+                    email_err.innerHTML = ''
+                }else{
+                    email_err.innerHTML = 'Enter a valid Email *'
+                }
             }
         })
 

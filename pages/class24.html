@@ -25,6 +25,15 @@
                     <input id="email" type="text" placeholder="Enter Your Email">
                     <p class="email_err"></p>
                 </div>
+                <div class="input-item pass_eye">
+                    <input id="password" type="password" placeholder="Enter Your Password">
+                    <i id="pass_eye" class="fa-solid fa-eye"></i>
+                    <p class="pass_err"></p>
+                </div>
+                <div class="input-item">
+                    <input id="con_pass" type="password" placeholder="Enter Your Confirm Password">
+                    <p class="con_pass_err"></p>
+                </div>
                 <div class="input-item">
                     <input id="submit" type="submit">
                 </div>
@@ -37,14 +46,22 @@
     <script>
 
         let name = document.querySelector("#name")
-        let submit = document.getElementById('submit')
-        let email = document.getElementById('email')
         let name_err = document.querySelector(".name_err")
+        let email = document.getElementById('email')
         let email_err = document.querySelector(".email_err")
-        // regex for email validation
+        let password = document.getElementById('password')
+        let pass_err = document.querySelector(".pass_err")
+        let con_pass = document.getElementById('con_pass')
+        let con_pass_err = document.querySelector(".con_pass_err")
+        let submit = document.getElementById('submit')
+        // regex for email and password validation
         let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+        let passwordformat = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
 
+        let pass_eye = document.getElementById('pass_eye')
+        
         submit.addEventListener("click",(e)=>{
+            // reload off
             e.preventDefault()
             if(!name.value){
                 name_err.innerHTML = 'Enter Name *'
@@ -52,6 +69,7 @@
                 name_err.innerHTML = ''
             }
 
+            // email validated
             if(!email.value){
                 email_err.innerHTML = 'Enter Your Email *'
             }else{
@@ -61,9 +79,44 @@
                     email_err.innerHTML = 'Enter a valid Email *'
                 }
             }
+
+
+            if(!password.value){
+                pass_err.innerHTML = 'Enter Your Password *'
+            }else{
+                if(password.value.match(passwordformat)){
+                    pass_err.innerHTML = ''
+                }else{
+                    pass_err.innerHTML = 'Enter a Strong Password *'
+                }
+            }
+
+
+            if(!con_pass.value){
+                con_pass_err.innerHTML = 'Please enter the confirmation password'
+            }else{
+                if(password.value == con_pass.value){
+                    con_pass_err.innerHTML = ''
+                }else{
+                    con_pass_err.innerHTML = 'Passsword didnt matched'
+                }
+            }
+
+        })
+
+        pass_eye.addEventListener("click",()=>{
+            if(password.type === "password"){
+                password.type = "text"
+            }else{
+                password.type = "password"
+            }
         })
 
         
+
+
+
+
     </script>
 
     <script src="../assets/js/jquery-1.12.4.min.js"></script>

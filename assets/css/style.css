@@ -223,3 +223,13 @@ form .input-item p {
     padding-top: 10px;
     color: red;
 }
+
+form .pass_eye {
+    position: relative;
+}
+
+form .input-item i {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+}

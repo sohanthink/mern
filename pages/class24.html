@@ -32,7 +32,7 @@
                                     <p class="pass_err"></p>
                                 </div>
                                 <div class="input-item">
-                                    <input id="con_pass" type="password" placeholder="Enter Your Confirm Password">
+                                    <input id="con_pass" type="password" placeholder="Confirm Password">
                                     <p class="con_pass_err"></p>
                                 </div>
                                 <div class="input-item">
@@ -50,7 +50,8 @@
                     <div class="form centered-div">
                         <form action="">
                             <div class="input-item">
-                                <input id="category_name" type="text" placeholder="Enter Categpry Name">
+                                <input id="category_name" type="text" placeholder="Enter Category Name">
+                                <p class="category_err"></p>
                             </div>
                             <div class="input-item mt-4">
                                 <input id="category_submit" type="submit">
@@ -58,8 +59,25 @@
                         </form>
                     </div>
                     <div class="category_box centered-div mt-5">
-                        <ul>
+                        <ul class="main hide">
                         </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6">
+                <div class="container">
+                    <h2 class="text-center py-4 fw-bold">Counter</h2>
+                    <div class="centered-div">
+                        <div class="counter_bg">
+                            <div class="counter centered-div">0</div>
+                            <div class="btns text-center">
+                                <span class="increase btn btn-info"> Increase</span>
+                                <span class=" mx-4 reset btn btn-info"> Reset</span>
+                                <span class="decrease btn btn-info"> Decrease</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -118,7 +136,7 @@
 
 
             if(!con_pass.value){
-                con_pass_err.innerHTML = 'Please enter the confirmation password'
+                con_pass_err.innerHTML = 'Confirm Password'
             }else{
                 if(password.value == con_pass.value){
                     con_pass_err.innerHTML = ''
@@ -139,13 +157,62 @@
         })
 
         // category add js starting from here================================
-        // ==================================================
+        // ==================================================================
 
+        let category_name = document.querySelector("#category_name")
+        let category_submit = document.getElementById('category_submit')
+        let category_err = document.querySelector(".category_err")
+        let main = document.querySelector(".main")
+
+        category_submit.addEventListener("click",(e)=>{
+            e.preventDefault()
+
+            if(category_name.value){
+                let arr = []
+                arr.push(category_name.value)
+
+                let element = ()=> {
+                    arr.map(item =>{
+                        let li = document.createElement('li')
+                        li.innerHTML = item
+                        main.appendChild(li)
+                    })
+                }
+                main.classList.remove("hide")
+                element()
+
+                category_name.value = ""
+
+
+                category_err.innerHTML = ""
+            }else{
+                category_err.innerHTML = "Enter A Category Name"
+            }
+        })
 
 
         
 
+        let counter = document.querySelector(".counter")
+        let increase = document.querySelector(".increase")
+        let decrease = document.querySelector(".decrease")
+        let reset = document.querySelector(".reset")
+        let count = 0
 
+
+        increase.addEventListener("click",()=>{
+            count = count+1
+            counter.innerHTML = count
+        })
+        decrease.addEventListener("click",()=>{
+            count = count-1
+            counter.innerHTML = count
+        })
+        reset.addEventListener("click",()=>{
+            count = 0
+            counter.innerHTML = count
+        })
+        
 
 
     </script>

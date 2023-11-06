@@ -235,15 +235,22 @@ form .input-item i {
 }
 
 .category_box ul {
-    background: #4dffc4;
     padding: 20px;
     width: 600px;
 }
 
 .category_box ul li {
-    background-color: red;
+    background-color: #4dffc4;
     padding: 5px;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+
+.category_box ul li button {
+    padding: 6px 12px;
+    border: navajowhite;
 }
 
 .counter {
@@ -255,4 +262,49 @@ form .input-item i {
     width: 500px;
     padding-bottom: 35px;
     border-radius: 5px;
+}
+
+/* ==============================================================================
+================================= calculator project css starts from here
+================================================================================ */
+
+.calculator {
+    margin: 0 auto
+}
+
+.calculator .main {
+    background-color: rgb(183, 218, 249);
+    width: 100%;
+    height: 80vh;
+}
+
+.calculator .main .input_style {
+    width: 210px;
+    padding: 5px
+}
+
+.calculator .err {
+    /* background-color: rgb(132, 92, 198); */
+    text-align: center;
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    padding: 15px;
+    color: rgb(92, 0, 0);
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.calculator .default {
+    /* background-color: rgb(132, 92, 198); */
+    text-align: center;
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    padding: 15px;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+
 }

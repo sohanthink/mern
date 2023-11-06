@@ -164,6 +164,7 @@
         let category_err = document.querySelector(".category_err")
         let main = document.querySelector(".main")
 
+
         category_submit.addEventListener("click",(e)=>{
             e.preventDefault()
 
@@ -175,15 +176,23 @@
                     arr.map(item =>{
                         let li = document.createElement('li')
                         li.innerHTML = item
+
+                        let delete_btn = document.createElement('button')
+                        delete_btn.innerText = "Delete"
+                        li.appendChild(delete_btn)
+
+                        delete_btn.addEventListener("click",()=>{
+                            li.remove()
+                        })
+
                         main.appendChild(li)
                     })
                 }
+                
                 main.classList.remove("hide")
                 element()
-
+                
                 category_name.value = ""
-
-
                 category_err.innerHTML = ""
             }else{
                 category_err.innerHTML = "Enter A Category Name"
@@ -191,7 +200,10 @@
         })
 
 
-        
+
+        // counter up and down and reset js starting from here ==============
+        // ==================================================================
+
 
         let counter = document.querySelector(".counter")
         let increase = document.querySelector(".increase")

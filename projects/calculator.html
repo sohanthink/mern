@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+   <div class="calculator">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="text-center fw-bold pt-4">Calculator</h2>
+                <div class="main position-relative">
+                    <div class="position-absolute top-0 left-0">
+                        <input class="addition input_style" type="text" placeholder="enter a value for Addition">
+                        <input class="btn btn-primary" id="add_btn" type="submit">
+                    </div>
+                    <div class="position-absolute top-0 end-0">
+                        <input class="subtract input_style" type="text" placeholder="enter a value for Subtract">
+                        <input class="btn btn-primary" id="subtract_btn" type="submit">
+                    </div>
+                    <div class="position-absolute bottom-0 end-0">
+                        <input class="multiply input_style" type="text" placeholder="enter a value for Multiply">
+                        <input class="btn btn-primary" id="multiply_btn" type="submit">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0">
+                        <input class="division input_style" type="text" placeholder="enter a value for division">
+                        <input class="btn btn-primary" id="division_btn" type="submit">
+                    </div>
+                    <div class="default">
+                        <span class="result fw-bold fs-1">1</span>
+                    </div>
+                    <div class="error">
+                        <p class="err"></p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <h2 class="text-center fw-bold pt-4">History</h2>
+                <ul class="history">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+   </div>
+
+
+    <script>
+
+       let addition = document.querySelector(".addition")
+       let subtract = document.querySelector(".subtract")
+       let multiply = document.querySelector(".multiply")
+       let division = document.querySelector(".division")
+       let result = document.querySelector(".result")
+       let err = document.querySelector(".err")
+       let history = document.querySelector(".history")
+
+       let add_btn = document.querySelector("#add_btn")
+       let subtract_btn = document.querySelector("#subtract_btn")
+       let multiply_btn = document.querySelector("#multiply_btn")
+       let division_btn = document.querySelector("#division_btn")
+
+       let add = parseFloat(result.innerHTML)
+       
+       let arr = []
+     
+       add_btn.addEventListener("click",()=>{
+            let valueToAdd = parseFloat(addition.value) 
+
+            if(!isNaN(valueToAdd)){
+                add = add + valueToAdd
+                result.textContent = add
+
+                let li = document.createElement("li")
+                li.innerHTML = "something added"
+                history.appendChild(li)
+
+                err.innerHTML = ""
+                addition.value = ""
+            } else{
+                err.innerHTML = "Input value is not a valid number"
+            }
+       })
+
+    </script>
+
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+</body>
+</html>

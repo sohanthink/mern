@@ -40,27 +40,44 @@
 
         addbtn.addEventListener("click",function(){
             if(input.value == ''){
-                err.innerHTML = "Please Type Something"
+                err.innerHTML = "Salar vai add kor kichu"
             }else{
                 list_parent.innerHTML = ""
                 err.innerHTML = ""
+
                 arr.push(input.value)
-                
-                arr.map(item => {
-                    list_parent.innerHTML += `<li>${item}<button class="dltBtn">delete</button></li>`
-                    let dltBtn = document.querySelectorAll(".dltBtn")
-                    let dltBtnArr = Array.from(dltBtn)
-                    console.log(typeof dltBtn);
-                    // dltBtnArr.map((d_item => {
-                    //     console.log(d_item);
-                    //     dltBtnArr.innerHTML = ""
-                    // }))
-
-                })
-
                 input.value = ""
+                todo()
             }
         })
+
+        function todo(){
+            list_parent.innerHTML = ""
+            arr.map((item) => {
+                    list_parent.innerHTML += `<li>${item}<button class="dltBtn">delete</button></li>`
+
+                    let dltBtn = document.querySelectorAll(".dltBtn")
+                    let dltBtnArr = Array.from(dltBtn)
+                    
+                    console.log(typeof dltBtnArr);
+
+                    dltBtnArr.map((delete_item,index) => {
+                        delete_item.addEventListener("click",function(){
+                            arr.splice(index,1)
+                            todo()
+                        })
+                    })
+
+                })
+        }
+
+
+
+
+
+
+
+
     </script>
     
     <script src="../assets/js/jquery-1.12.4.min.js"></script>

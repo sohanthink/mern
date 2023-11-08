@@ -317,11 +317,9 @@ form .input-item i {
 
 
 .todo .err {
-    margin-top: 50px;
     color: red;
     font-size: 20px;
     padding: 12px 15px;
-    background-color: white;
     width: 620px;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -335,15 +333,21 @@ form .input-item i {
 
 
 .todo ul li {
-    width: 620px;
+    width: 550px;
     margin: 0 auto;
     padding: 12px 15px;
     background-color: #ebebeb;
     margin-bottom: 10px;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .todo ul li button {
-    float: inline-end;
     background: red;
+    padding: 6px;
+    border: navajowhite;
+    color: white;
+    border-radius: 5px;
 }

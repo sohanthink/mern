@@ -308,3 +308,42 @@ form .input-item i {
     border-radius: 10px;
 
 }
+
+
+
+/* ==============================================================================
+================================= ToDo project css starts from here
+================================================================================ */
+
+
+.todo .err {
+    margin-top: 50px;
+    color: red;
+    font-size: 20px;
+    padding: 12px 15px;
+    background-color: white;
+    width: 620px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.todo .form-control {
+    width: 500px;
+}
+
+
+
+.todo ul li {
+    width: 620px;
+    margin: 0 auto;
+    padding: 12px 15px;
+    background-color: #ebebeb;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.todo ul li button {
+    float: inline-end;
+    background: red;
+}

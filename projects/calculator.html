@@ -17,19 +17,19 @@
                 <h2 class="text-center fw-bold pt-4">Calculator</h2>
                 <div class="main position-relative">
                     <div class="position-absolute top-0 left-0">
-                        <input class="addition input_style" type="text" placeholder="enter a value for Addition">
+                        <input class="addition input_style" type="text" placeholder="Enter a value for Addition">
                         <input class="btn btn-primary" id="add_btn" type="submit">
                     </div>
                     <div class="position-absolute top-0 end-0">
-                        <input class="subtract input_style" type="text" placeholder="enter a value for Subtract">
+                        <input class="subtract input_style" type="text" placeholder="Enter a value for Subtract">
                         <input class="btn btn-primary" id="subtract_btn" type="submit">
                     </div>
                     <div class="position-absolute bottom-0 end-0">
-                        <input class="multiply input_style" type="text" placeholder="enter a value for Multiply">
+                        <input class="multiply input_style" type="text" placeholder="Enter a value for Multiply">
                         <input class="btn btn-primary" id="multiply_btn" type="submit">
                     </div>
                     <div class="position-absolute bottom-0 start-0">
-                        <input class="division input_style" type="text" placeholder="enter a value for division">
+                        <input class="division input_style" type="text" placeholder="Enter a value for division">
                         <input class="btn btn-primary" id="division_btn" type="submit">
                     </div>
                     <div class="default">
@@ -68,15 +68,36 @@
        let division_btn = document.querySelector("#division_btn")
 
        let add = parseFloat(result.innerHTML)
-       
        let arr = []
+
      
        add_btn.addEventListener("click",()=>{
             let valueToAdd = parseFloat(addition.value) 
-
             if(!isNaN(valueToAdd)){
                 add = add + valueToAdd
                 result.textContent = add
+                arr.push(add)
+                let li = document.createElement("li")
+                li.innerHTML = "something added"
+                history.appendChild(li)
+
+                err.innerHTML = ""
+                addition.value = ""
+            } else{
+                addition.value = ""
+                err.innerHTML = "Input value is not a valid number"
+            }
+        })
+        
+        
+        
+
+       let sub = parseFloat(result.innerHTML)
+       subtract_btn.addEventListener("click",()=>{
+            let subValue = parseFloat(subtract.value) 
+            if(!isNaN(subValue)){
+                sub = add - subValue
+                result.textContent = sub
 
                 let li = document.createElement("li")
                 li.innerHTML = "something added"
@@ -88,6 +109,8 @@
                 err.innerHTML = "Input value is not a valid number"
             }
        })
+       
+       
 
     </script>
 

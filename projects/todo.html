@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do</title>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+
+    <div class="todo">
+        <div class="container">
+            <h1 class="text-center fw-bold pt-4">To-Do App</h1>
+
+            <p class="err text-center"></p>
+            <div class="main d-flex gap-4 justify-content-center">
+                <div class="col-auto">
+                    <input type="text" class="input form-control" id="inputPassword2" placeholder="Enter something">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="addbtn btn btn-primary mb-3">Add Item</button>
+                </div>
+            </div>
+            <ul class="list_parent">
+            </ul>
+
+        </div>
+    </div>
+
+    <script>
+        let input = document.querySelector(".input")
+        let addbtn = document.querySelector(".addbtn")
+        let err = document.querySelector(".err")
+        let list_parent = document.querySelector(".list_parent")
+
+        let arr = []
+
+        addbtn.addEventListener("click",function(){
+            if(input.value == ''){
+                err.innerHTML = "Please Type Something"
+            }else{
+                list_parent.innerHTML = ""
+                err.innerHTML = ""
+                arr.push(input.value)
+                
+                arr.map(item => {
+                    list_parent.innerHTML += `<li>${item}<button class="dltBtn">delete</button></li>`
+                    let dltBtn = document.querySelectorAll(".dltBtn")
+                    let dltBtnArr = Array.from(dltBtn)
+                    console.log(typeof dltBtn);
+                    // dltBtnArr.map((d_item => {
+                    //     console.log(d_item);
+                    //     dltBtnArr.innerHTML = ""
+                    // }))
+
+                })
+
+                input.value = ""
+            }
+        })
+    </script>
+    
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/index.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+</body>
+</body>
+</html>

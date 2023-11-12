@@ -37,29 +37,39 @@
         let list_parent = document.querySelector(".list_parent")
 
         let arr = []
+        let arrindex
 
+        // list added click
         addbtn.addEventListener("click",function(){
             if(input.value == ''){
                 err.innerHTML = "Salar vai add kor kichu"
             }else{
-                list_parent.innerHTML = ""
-                err.innerHTML = ""
+                if(addbtn.innerHTML == 'Add Item'){
 
-                arr.push(input.value)
-                input.value = ""
-                todo()
+                    list_parent.innerHTML = ""
+                    err.innerHTML = ""
+    
+                    arr.push(input.value)
+                    input.value = ""
+                    todo()
+                }else{
+                    arr[arrindex] = input.value
+                    todo()
+                }
             }
         })
 
+        // function for delete and esdit
         function todo(){
             list_parent.innerHTML = ""
             arr.map((item) => {
-                    list_parent.innerHTML += `<li>${item}<button class="dltBtn">delete</button></li>`
+                    list_parent.innerHTML += `<li>${item}<div><button class="editBtn">Edit</button><button class="dltBtn">delete</button></div></li>`
 
+                    // delete operation start from here
                     let dltBtn = document.querySelectorAll(".dltBtn")
                     let dltBtnArr = Array.from(dltBtn)
-                    
-                    console.log(typeof dltBtnArr);
+
+                    // console.log(typeof dltBtnArr);
 
                     dltBtnArr.map((delete_item,index) => {
                         delete_item.addEventListener("click",function(){
@@ -67,6 +77,21 @@
                             todo()
                         })
                     })
+                    // delete operation ends here
+
+                    // edit operation starts here
+                    let editBtn = document.querySelectorAll(".editBtn")
+                    let editBtnArr = Array.from(editBtn)
+
+                    editBtnArr.map((edit_item,index)=>{
+                        edit_item.addEventListener("click",function(){
+                            input.value = arr[index]
+                            arrindex = index
+                            addbtn.innerHTML = "Update" 
+                        })
+                    })
+
+                    // edit operation ends here
 
                 })
         }

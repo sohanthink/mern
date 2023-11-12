@@ -264,6 +264,74 @@ form .input-item i {
     border-radius: 5px;
 }
 
+/* ==================================
+======== class-26 css starts from here
+================================== */
+
+
+.toggle_btn {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all ease 0.4s;
+    cursor: pointer;
+}
+
+.toggle_btn.dark .btn-primary {
+    background-color: darkred;
+}
+
+.toggle_btn i {
+    color: white;
+    font-size: 20px;
+}
+
+body.dark_page {
+    background-color: darkred;
+}
+
+body.dark_page h2 {
+    color: rgb(255, 255, 255)
+}
+
+body.dark_page .btn-primary {
+    background-color: darkred;
+    border-color: darkred;
+}
+
+body.dark_page .toggle_btn {
+    background-color: white;
+    border-radius: 50%;
+}
+
+body.dark_page .toggle_btn i {
+    color: black;
+}
+
+.img_hover {
+    transition: all ease 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ==============================================================================
 ================================= calculator project css starts from here
 ================================================================================ */

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class-23</title>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="" style="height: 10000px;">
+
+    <div class="toggle_btn">
+        <i class="fa-solid fa-sun"></i>
+    </div>
+    <h2 class="text-center py-5 fw-bold">Dark/light, hover effect With javascript</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="../assets/images/class-26/1.JPG" class="img_hover card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="../assets/images/class-26/1.JPG" class="img_hover card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="../assets/images/class-26/1.JPG" class="img_hover card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="../assets/images/class-26/1.JPG" class="img_hover card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let toggle_btn = document.querySelector('.toggle_btn')
+        toggle_btn.addEventListener("click", function(){
+            if(toggle_btn.innerHTML == `<i class="fa-solid fa-sun"></i>`){
+                toggle_btn.innerHTML = `<i class="fa-solid fa-moon"></i>`
+            }else{
+                toggle_btn.innerHTML = `<i class="fa-solid fa-sun"></i>`
+            }
+            toggle_btn.classList.toggle("dark")
+            document.body.classList.toggle("dark_page")
+        })
+
+        // mouse over effect
+        let img_hover = document.querySelectorAll(".img_hover")
+        let img_hoverArr = Array.from(img_hover)
+        img_hoverArr.map(item => {
+            item.addEventListener("mouseover",function(){
+                item.style.scale = 1.1
+            })
+            item.addEventListener("mouseout",function(){
+                item.style.scale = 1.0
+            })
+        })
+
+        // this process for a single class mouse over
+        // img_hover.addEventListener("mouseover", function(){
+        //     img_hover.style.scale = 1.1
+        // })
+        //  img_hover.addEventListener("mouseout", function(){
+        //     img_hover.style.scale = 1.0
+        // })
+
+
+            let fullScreenHeight = screen.availHeight
+            console.log(fullScreenHeight)
+
+
+
+
+    </script>
+
+
+
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+</body>
+</html>

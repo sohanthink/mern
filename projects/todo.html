@@ -55,9 +55,11 @@
                 }else{
                     arr[arrindex] = input.value
                     todo()
+                    input.value = ''
+                    addbtn.innerHTML = 'Add Item'
                 }
             }
-        })
+        }) 
 
         // function for delete and esdit
         function todo(){

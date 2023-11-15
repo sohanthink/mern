@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form Animate</title>
+    <link rel="stylesheet" href="../assets/css/animatedform.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="animated-form" id="form">
+        <div class="container">
+            <div class="main">
+
+                <div class="form-container sign-in">
+                    <form>
+                        <h1 class="fw-bold">Sign In</h1>
+                        <div class="social-icons">
+                            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                        <span class="mt-3 mb-1">or use your email password</span>
+                        <div class="div">
+                            <input class="d-block" type="email" placeholder="Email">
+                            <input class="d-block" type="password" placeholder="Password">
+                        </div>
+                        <a class="d-block my-3" href="#">Forget Your Password?</a>
+                        <button>Sign In</button>
+                    </form>
+                </div>
+
+                <div class="form-container sign-up">
+                    <form>
+                        <h1 class="fw-bold">Create Account</h1>
+                        <div class="social-icons">
+                            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                        <span class="mt-3 mb-1">or use your email for registeration</span>
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <button class="signup">Sign Up</button>
+                    </form>
+                </div>
+
+                <div class="toggle-container">
+                    <div class="toggle">
+
+                        <div class="toggle-panel toggle-right">
+                            <h1>Welcome Back!</h1>
+                            <p>Enter your personal details to use all of site features</p>
+                            <button class="signin" id="login">Sign In</button>
+                        </div>
+
+                        <div class="toggle-panel toggle-left">
+                            <h1 class="fw-bold">Hello, Friend!</h1>
+                            <p>Register with your personal details to use all of site features</p>
+                            <button id="signup">Sign Up</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let login = document.querySelector("#login")
+        let signup = document.querySelector("#signup")
+        let main = document.querySelector(".main")
+
+        login.addEventListener("click",function(){
+            main.classList.add("active")
+        })
+        signup.addEventListener("click",function(){
+            main.classList.remove("active")
+        })
+
+    </script>
+
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+</body>
+</html>
